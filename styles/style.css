@@ -1,0 +1,771 @@
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  font-family: "Roboto", sans-serif;
+  user-select: none;
+}
+body {
+  background: radial-gradient(circle, #0033ff, #3d7eff);
+  overflow-x: hidden;
+}
+body::-webkit-scrollbar {
+  width: 10px;
+}
+
+body::-webkit-scrollbar-track {
+  background: radial-gradient(circle, #0033ff, #3d7eff);
+}
+
+body::-webkit-scrollbar-thumb {
+  background-color: #fff;
+  border-radius: 20px;
+}
+
+header {
+  background-color: #222222;
+  width: 100%;
+  height: 65px;
+  color: white;
+  position: sticky;
+  top: 0px;
+  z-index: 1000;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+#siteName {
+  background: rgba(93, 28, 246, 1);
+  background: -webkit-linear-gradient(
+    to right,
+    rgba(93, 28, 246, 1),
+    rgba(201, 0, 0, 1)
+  );
+  background: linear-gradient(
+    to right,
+    rgba(93, 28, 246, 1),
+    rgba(201, 0, 0, 1)
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  letter-spacing: 2px;
+  font-weight: bold;
+  width: 300px;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#nav-hamburger {
+  display: none;
+  width: 35px;
+  height: 35px;
+  background-color: transparent;
+  border-radius: 5px;
+  border: 1px solid transparent;
+  outline: none;
+  cursor: pointer;
+}
+
+#listHeader,
+nav {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  list-style: none;
+}
+
+.navItem {
+  cursor: pointer;
+  letter-spacing: 3px;
+}
+.navItem:hover {
+  background: rgba(93, 28, 246, 1);
+  background: -webkit-linear-gradient(
+    to right,
+    rgba(93, 28, 246, 1),
+    rgba(201, 0, 0, 1)
+  );
+  background: linear-gradient(
+    to right,
+    rgba(93, 28, 246, 1),
+    rgba(201, 0, 0, 1)
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  transition: 0.2s;
+}
+
+a {
+  text-decoration: none;
+}
+a:visited,
+a:link {
+  color: inherit;
+}
+.codeCopied{
+  width: 100%;
+  padding: 5px;
+  letter-spacing: 2px;
+  font-weight: bold;
+  text-transform: uppercase;
+  color: #fff;
+  text-align: center;
+  background-color: rgba(61, 255, 61, 0.637);
+  display: none;
+}
+main {
+  margin: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding: 30px;
+}
+
+#generators {
+  padding-top: 50px;
+  display: grid;
+  grid-template-columns: 80vw;
+  grid-template-rows:1fr 1fr 1fr 1fr 1fr;
+  gap: 20px 0px;
+  justify-items: center;
+  align-items: center;
+  grid-auto-flow: row;
+  grid-template-areas:
+    "gen1"
+    "gen2"
+    "gen3"
+    "gen4"
+    "gen5";
+}
+
+#gen1 {
+  grid-area: gen1;
+}
+
+#gen2 {
+  grid-area: gen2;
+}
+
+#gen3 {
+  grid-area: gen3;
+}
+
+#gen4 {
+  grid-area: gen4;
+}
+
+#gen5 {
+  grid-area: gen5;
+}
+
+
+
+.generatorsArea {
+  width: 100%;
+  height: 500px;
+  border-radius: 10px;
+}
+.boxs {
+  background: rgb(201, 0, 0);
+  background: linear-gradient(
+    300deg,
+    rgba(201, 0, 0, 1) 3%,
+    rgba(93, 28, 246, 1) 92%
+  );
+  border-radius: 10px;
+  width: 100%;
+  height: 100%;
+}
+.boxs a {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+#boxTextGradient a,
+#boxBoxShadow a,
+#boxButtons a,
+#boxBorder a {
+  font-size: 80px;
+  padding-left: 10px;
+  letter-spacing: 2px;
+}
+
+#boxBackground a {
+  font-size: 60px;
+  letter-spacing: 2px;
+}
+#boxTransform a {
+  font-size: 70px;
+  letter-spacing: 2px;
+}
+.boxs:hover {
+  transform: scale(0.9);
+  transition: 0.5s;
+  background: rgba(201, 0, 0, 0.377);
+  background: linear-gradient(
+    300deg,
+    rgba(201, 0, 0, 0.377) 3%,
+    rgba(93, 28, 246, 0.377) 92%
+  );
+  color: white;
+}
+
+/* =======================================BOX-SHADOW and BORDER-RADIUS=================================== */
+
+.boxShadow-generator,
+.border-generator,
+.transform-generator {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 80%;
+  height: 650px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.controlPanel {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  width: 30%;
+  height: 100%;
+  flex-direction: column;
+  border-radius: 20px 20px 20px 0px;
+  background-color: #3a3a3a88;
+}
+input {
+  width: 100%;
+  cursor: pointer;
+}
+.box-control {
+  width: 100%;
+  padding-left: 10px;
+  padding-right: 10px;
+  text-align: center;
+  border-bottom: 2px solid #cfcfcf;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.box-control label,
+.boxColorsBackground label {
+  padding: 10px;
+  font-weight: bold;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: #fff;
+}
+.content {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  flex-direction: column;
+}
+
+#block-boxShadow,
+#block-border,
+#block-transform {
+  margin-bottom: 150px;
+  background-color: #a1a1a1;
+  width: 300px;
+  height: 300px;
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+#block-boxShadow {
+  box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 1);
+}
+
+.out {
+  background-color: #3a3a3a88;
+  color: #fff;
+  width: 100%;
+  height: 60px;
+  text-align: center;
+  padding-top: 20px;
+  border-radius: 20px 20px 0px 0px;
+}
+
+.copy {
+  width: 100%;
+  cursor: pointer;
+  padding: 10px;
+  background: rgb(201, 0, 0);
+  background: linear-gradient(
+    300deg,
+    rgba(201, 0, 0, 1) 3%,
+    rgba(93, 28, 246, 1) 92%
+  );
+  font-weight: bold;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  border: 1px solid #bebebe;
+  color: white;
+}
+
+input[type="color"] {
+  border-radius: 20px;
+  width: 90px;
+  height: 50px;
+  background-color: transparent;
+  outline: none;
+  border: none;
+}
+input[type="color"]::-webkit-color-swatch {
+  border-radius: 20px;
+  border: 2px solid gray;
+}
+
+/* ============BACKGROUND================ */
+
+#background-generator {
+  border-radius: 20px 20px 0px 0px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 90%;
+  height: 720px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: column;
+  background: rgba(255, 255, 255, 0.719);
+}
+.colorsAndbtnGenerate {
+  width: 100%;
+  height: auto;
+  display: inline-flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-left: 30px;
+  padding-right: 30px;
+}
+.boxColor-backgroundGenerator {
+  background-color: #3a3a3a75;
+  border-radius: 20px;
+  display: inline-flex;
+  align-items: center;
+  padding: 5px;
+  color: #fff;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-weight: bold;
+}
+#controls-background {
+  background-color: #3a3a3a5d;
+  width: 100%;
+  height: 200px;
+  border-radius: 20px;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  flex-direction: column;
+  border-radius: 20px 20px 0px 0px;
+}
+
+.steeringControls {
+  width: 50%;
+  height: 30px;
+  display: inline-flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.steeringControls .active {
+  background-color: #222222;
+  color: #fff;
+  border: none;
+}
+.steeringControls button {
+  height: 100%;
+  width: 30px;
+  border: 2px solid #d5d5d5;
+  border-radius: 10px;
+  background-color: #fff;
+  cursor: pointer;
+  color: #adadad;
+}
+
+.steeringControls button:hover {
+  color: #4d4d4d;
+  transition: 0.5s;
+}
+
+.rotate-icon i {
+  transform: rotate(45deg);
+}
+#btnGenerate {
+  width: 200px;
+  height: 40px;
+  outline: none;
+  border: 2px solid transparent;
+  border-radius: 20px;
+  cursor: pointer;
+  letter-spacing: 3px;
+  font-weight: bold;
+  text-transform: uppercase;
+  color: #fff;
+  background-color: rgba(34, 34, 34, 0.753);
+}
+
+/* ==================================TEXT-GRADIENT=================================  */
+
+#textGradient-generator {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 60%;
+  height: 650px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: column;
+  background: rgba(255, 255, 255, 0.342);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.281);
+  backdrop-filter: blur(0px);
+  -webkit-backdrop-filter: blur(0px);
+  border-radius: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+}
+
+#controles-textGradient {
+  width: 100%;
+  height: 20%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background-color: #3a3a3a1e;
+  border-radius: 20px 20px 0px 0px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-weight: bold;
+  color: #fff;
+}
+.colors-textGradient {
+  display: inline-flex;
+  align-items: center;
+  justify-content: space-evenly;
+  width: 200px;
+  height: 100px;
+  background-color: #3a3a3a88;
+  border-radius: 30px;
+}
+#textPreview {
+  resize: none;
+  width: 100%;
+  height: 50%;
+  font-weight: bold;
+  font-size: 60px;
+  text-align: center;
+}
+#content-textGradient {
+  width: 100%;
+  height: 30%;
+  background-color: #3a3a3a1e;
+  border-radius: 0px 0px 20px 20px;
+  color: rgb(199, 199, 199);
+  letter-spacing: 1px;
+  padding: 20px;
+}
+
+footer{
+background-color: #00000071; 
+width: 100%; 
+height: 30px; 
+display: inline-flex;
+justify-content: center;
+align-items: center;
+letter-spacing: 2px;
+color: #fff;
+font-weight: bold;
+}
+footer a{
+  text-decoration:underline;
+}
+
+/* ==========================================RESPONSIBILITY============================================== */
+
+/* others screens */
+
+@media screen and (min-width: 1280px) and (max-width: 1366px) {
+  .boxShadow-generator,
+  .border-generator,
+  .transform-generator,
+  #background-generator,
+  #textGradient-generator {
+    width: 90%;
+    height: 80%;
+    top: 80%;
+    left: 50%;
+    transform: translate(-50%, -80%);
+  }
+
+  #block-boxShadow,
+  #block-border,
+  #block-transform {
+    width: 280px;
+    height: 300px;
+  }
+}
+
+/* phones */
+@media screen and (max-width: 750px) {
+  /* ===================HEADER ,INDEX========================= */
+  #nav-hamburger {
+    display: block;
+  }
+  #nav-hamburger:hover {
+    background-color: #3d3d3d;
+  }
+  nav {
+    height: 80vh;
+    position: fixed;
+    background-color: #222222f1;
+    border-radius: 0px 0px 10px 10px;
+    top: 65px;
+    left: 0;
+    z-index: 1000;
+    display: none;
+  }
+
+  #listHeader {
+    flex-direction: column;
+  }
+
+  main {
+    padding: 20px;
+  }
+
+  main h1,
+  h2 {
+    text-align: center;
+  }
+
+  #generators {
+    grid-template-columns: 90vw;
+   
+  }
+  .generatorsArea {
+    height: 400px;
+  }
+
+  #boxTextGradient a,
+  #boxBoxShadow a,
+  #boxButtons a,
+  #boxBorder a,
+  #boxBackground a,
+  #boxTransform a {
+    font-size: 48px;
+    letter-spacing: 1px;
+    text-align:center;
+  }
+
+  /* =====================BOX-SHADOW, TRANSFORM AND   BORDER-RADIUS============== */
+  .boxShadow-generator,
+  .border-generator,
+  .transform-generator {
+    width: 100%;
+    height: 90%;
+    top: 100%;
+    left: 100%;
+    transform: translate(-100%, -100%);
+  }
+
+  .controlPanel {
+    width: 40%;
+    height: 100%;
+    border-radius: 0px 0px 0px 0px;
+    background-color: #3a3a3a88;
+  }
+
+  .box-control {
+    width: 100%;
+    padding-left: 5px;
+    padding-right: 5px;
+  }
+  .box-control label,
+  .boxColorsBackground label {
+    padding: 2px;
+    letter-spacing: 1px;
+  }
+
+  #block-boxShadow,
+  #block-border,
+  #block-transform {
+    width: 180px;
+    height: 180px;
+  }
+
+  .out {
+    height: auto;
+    border-radius: 0px 0px 0px 0px;
+  }
+
+  /* =====================BACKGROUND============== */
+
+  #background-generator {
+    border-radius: 20px 20px 0px 0px;
+    position: absolute;
+    top: 100%;
+    left: 100%;
+    transform: translate(-100%, -100%);
+    width: 100%;
+    height: 85%;
+  }
+  .colorsAndbtnGenerate {
+    width: 100%;
+    height: 50px;
+    display: inline-flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-left: 5px;
+    padding-right: 5px;
+  }
+  .boxColor-backgroundGenerator {
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 4px;
+    letter-spacing: 1px;
+  }
+  #controls-background {
+    background-color: #3a3a3a5d;
+    width: 100%;
+    height: 200px;
+    border-radius: 20px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-direction: column;
+    border-radius: 20px 20px 0px 0px;
+  }
+
+  .steeringControls {
+    width: 50%;
+    height: 35px;
+    display: inline-flex;
+    justify-content: space-evenly;
+    align-items: center;
+  }
+
+  .steeringControls button {
+    height: 90%;
+    width: 50px;
+    margin: 1px;
+  }
+
+  #btnGenerate {
+    width: 100px;
+    height: 40px;
+    border-radius: 10px;
+    letter-spacing: 1px;
+  }
+
+  /* =====================TEXT-GRADIENT============== */
+
+  #textGradient-generator {
+    position: absolute;
+    top: 100%;
+    left: 100%;
+    transform: translate(-100%, -100%);
+    width: 100%;
+    height: 85%;
+  }
+
+  #controles-textGradient {
+    width: 100%;
+    height: 20%;
+    border-radius: 20px 20px 0px 0px;
+    letter-spacing: 1px;
+  }
+  .colors-textGradient {
+    justify-content: center;
+    width: 50%;
+    height: 50px;
+    border-radius: 20px;
+    text-align: center;
+  }
+  #textPreview {
+    height: 40%;
+    font-size: 40px;
+  }
+  #content-textGradient {
+    width: 100%;
+    height: 40%;
+    padding: 10px;
+  }
+}
+
+/* tablets */
+@media screen and (min-width: 750px) and (max-width: 1280px) {
+  #nav-hamburger {
+    display: block;
+  }
+  #nav-hamburger:hover {
+    background-color: #3d3d3d;
+  }
+  nav {
+    height: 80vh;
+    position: fixed;
+    background-color: #222222f1;
+    border-radius: 0px 0px 10px 10px;
+    top: 65px;
+    left: 0;
+    display: none;
+  }
+  #listHeader {
+    flex-direction: column;
+  }
+
+  main {
+    padding: 20px;
+  }
+
+  main h1,
+  h2 {
+    text-align: center;
+  }
+
+  #generators {
+    grid-template-columns: 90vw;
+   
+  }
+  .generatorsArea {
+    height: 400px;
+  }
+
+  #boxTextGradient a,
+  #boxBoxShadow a,
+  #boxButtons a,
+  #boxBorder a,
+  #boxBackground a,
+  #boxTransform a {
+    font-size: 65px;
+  }
+}

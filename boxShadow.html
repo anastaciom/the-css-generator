@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+    content="CSS Generator - Box Shadow">
+    <link rel="apple-touch-icon" sizes="180x180" href="./styles/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="./styles/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="./styles/favicon/favicon-16x16.png">
+    <link rel="manifest" href="./styles/favicon/site.webmanifest">
+    <title>CSS Generator | Box Shadow</title>
+    <link rel="stylesheet" href="./styles/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;700&display=swap" rel="stylesheet">
+
+</head>
+
+<body>
+    <header>
+        <div id="siteName">
+            <a href="/">
+                <h1>CSS Generator</h1>
+            </a>
+        </div>
+        <nav>
+            <ul id="listHeader">
+                <li class="navItem">
+                    <a href="./textGradient.html">
+                        <h2>Text Gradient</h2>
+                    </a>
+                </li>
+                <li class="navItem">
+                    <a href="./boxShadow.html">
+                        <h2> Box shadow</h2>
+                    </a>
+                </li>
+               
+                <li class="navItem">
+                    <a href="./borders.html">
+                        <h2>Border Radius</h2>
+                    </a>
+                </li>
+                <li class="navItem">
+                    <a href="./background.html">
+                        <h2>Background</h2>
+                    </a>
+                </li>
+                <li class="navItem">
+
+                    <a href="./transform.html">
+                        <h2>Transform</h2>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+        <button id="nav-hamburger">
+            <img style="width: 30px; height: 30px;" src="./styles/hamburgerBarIcon.png" alt="buttonMenuMobile">
+        </button>
+    </header>
+    <div class="codeCopied"> <small>Copied!!!</small> </div>
+    <section class="boxShadow-generator">
+        <div class="content">
+            <div id="block-boxShadow">
+                <h3>Box preview</h3>
+            </div>
+            <div class="out">
+                -webkit-box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 1);
+                box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 1);
+            </div>
+            <button class="copy">Copy</button>
+        </div>
+        <div class="controlPanel">
+            <span class="box-control">
+                <label for="h-shadow">Horizontal</label>
+                <input type="range" value="10" min="-200" max="200" id="h-shadow">
+            </span>
+
+            <span class="box-control">
+                <label for="v-shadow">Vertical</label>
+                <input type="range" value="10" min="-200" max="200" id="v-shadow">
+            </span>
+            <span class="box-control">
+                <label for="b-radius">Blur Radius</label>
+                <input type="range" value="5px" min="0" max="400" id="b-radius">
+            </span>
+            <span class="box-control">
+                <label for="s-radius">Spread Radius</label>
+                <input type="range" value="0" min="-200" max="200" id="s-radius">
+            </span>
+            <span class="box-control">
+                <label for="sh-color">Shadow Color</label>
+                <input type="color" id="sh-color" value="rgba(0,0,0, 1)">
+            </span>
+        </div>
+
+
+    </section>
+
+
+    <script defer src="./js/boxShadow.js"></script>
+    <script defer src="./js/btnNavbar.js"></script>
+</body>
